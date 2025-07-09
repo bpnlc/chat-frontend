@@ -2,7 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import { useChatStore } from "../store/chatStore";
 import { io } from "socket.io-client";
 
-const socket = io("https://chat-backend-119t.onrender.com");// ... other imports ...
+const socket = io(import.meta.env.VITE_BACKEND_URL);// ... other imports ...
 
 export default function ChatWindow() {
     const username = useChatStore((state) => state.username);
